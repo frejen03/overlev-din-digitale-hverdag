@@ -1,1 +1,108 @@
-/*# sourceMappingURL=style.css.map */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #02142b;
+  color: #cff6ea;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.card {
+  background: #cff6ea;
+  color: #02142b;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+.card h2 {
+  margin-bottom: 1rem;
+}
+.card p {
+  margin-top: 1rem;
+}
+.card ul {
+  margin-top: 1rem;
+  list-style: none;
+}
+.card ul li {
+  margin: 1rem 0;
+}
+
+.success {
+  border-left: 8px solid green;
+  background: #4dff4d;
+}
+
+.warning {
+  border-left: 8px solid orange;
+  background: #ffedcc;
+}
+
+.danger {
+  border-left: 8px solid red;
+  background: #ffcccc;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #6623b8;
+  color: white;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.btn:hover {
+  background: #fa3292;
+}
+
+.points {
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+.start {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(to right, rgba(2, 20, 43, 0.9), rgba(2, 20, 43, 0.6)), url("../img/forside-bg.png");
+  background-size: cover;
+  background-position: center;
+}
+.start__content {
+  max-width: 500px;
+}
+.start__content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.start__content p {
+  margin-bottom: 1rem;
+}
+
+.start-btn {
+  background: #4caf50;
+  width: auto;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+.start-btn:hover {
+  background: #3e8e41;
+}
+
+.time {
+  opacity: 0.8;
+  font-size: 0.9rem;
+}/*# sourceMappingURL=style.css.map */
