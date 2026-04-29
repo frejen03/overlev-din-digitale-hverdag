@@ -1,84 +1,105 @@
-// =================TOPBAR=================//
-const topbar = document.querySelector("#topbar");
+const app = document.querySelector("#app");
 
-function renderTopbar() {
-  topbar.innerHTML = `
-    <div class="topbar">
+let score = 0;
+
+
+// ================= START SCREEN ================= //
+
+function showStartScreen() {
+  app.innerHTML = `
+    
+    <header class="topbar">
       <div class="topbar__left">
         <span class="logo">🛡️</span>
         <h3>Overlev din digitale hverdag</h3>
       </div>
 
       <div class="topbar__right">
-        <div class="score">
-          ⭐ ${score} / 300 point
-        </div>
-
+        <div class="score">⭐ ${score} / 300 point</div>
         <button class="info-btn">Sådan spiller du</button>
       </div>
-    </div>
-  `;
-}
+    </header>
 
-// =================APP=================//
 
-const app = document.querySelector("#app");
+    <!-- NY WRAPPER -->
+    <div class="home">
 
-let score = 0;
+      <section class="hero">
+        <div class="hero__left">
+          <h1>Overlev din digitale hverdag</h1>
 
-// ================= START ================= //
-function showStartScreen() {
-  app.innerHTML = `
-    <section class="start">
-      <div class="start__content">
-        <h1>Overlev din digitale hverdag</h1>
+          <p>
+            Gennemfør 3 scenarier og lær at undgå phishing, 
+            malware og usikre netværk.
+          </p>
 
-        <p>
-          Gennemfør 3 scenarier og lær at undgå phishing, 
-          malware og usikre netværk.
-        </p>
+          <button class="btn start-btn" data-action="start">
+            ▶ Start spillet
+          </button>
 
-        <button class="btn start-btn" data-action="start">
-          ▶ Start spillet
-        </button>
+          <p class="time">Det tager ca. 10-15 minutter</p>
+        </div>
 
-        <p class="time">Det tager ca. 10-15 minutter</p>
+        <div class="hero__right"></div>
+      </section>
 
-        <!-- NYT: BOXES -->
-        <div class="features">
-          <div class="feature">
+
+      <section class="features">
+        <div class="feature">
+          <span class="icon">🎯</span>
+          <div>
             <h4>Træf valg</h4>
             <p>Du vælger, hvad du gør i realistiske situationer.</p>
           </div>
+        </div>
 
-          <div class="feature">
+        <div class="feature">
+          <span class="icon">👍</span>
+          <div>
             <h4>Få feedback</h4>
             <p>Se konsekvenserne af dine valg.</p>
           </div>
+        </div>
 
-          <div class="feature">
+        <div class="feature">
+          <span class="icon">🧠</span>
+          <div>
             <h4>Bliv klogere</h4>
             <p>Lær at spotte trusler og tag bedre beslutninger online.</p>
           </div>
         </div>
+      </section>
 
-        <!-- NYT: FOOTER TEXT -->
-        <p class="tagline">
-          Små valg i dag – større sikkerhed i morgen.
-        </p>
 
-      </div>
-      <div class="start__image"></div>
-    </section>
+      <p class="tagline">
+        Små valg i dag – større sikkerhed i morgen.
+      </p>
+
+    </div>
   `;
 }
 
+
+// ================= SCENE 1 ================= //
+
 function showScene1() {
   app.innerHTML = `
+    <header class="topbar">
+      <div class="topbar__left">
+        <span class="logo">🛡️</span>
+        <h3>Overlev din digitale hverdag</h3>
+      </div>
+
+      <div class="topbar__right">
+        <div class="score">⭐ ${score} / 300 point</div>
+        <button class="info-btn">Sådan spiller du</button>
+      </div>
+    </header>
+
     <section class="card">
-      <h2>Du har modtaget en vigtig mail</h2>
+      <h2>Du har modtaget en mail</h2>
       <p>
-        "Mistænkelig aktivitet på din studieprofil. 
+        "Mistænkelig aktivitet på din studieprofil.
         Log ind nu for at sikre din konto."
       </p>
 
@@ -91,6 +112,7 @@ function showScene1() {
   `;
 }
 
+
 // ================= EVENTS ================= //
 
 app.addEventListener("click", (e) => {
@@ -99,104 +121,41 @@ app.addEventListener("click", (e) => {
   const choice = e.target.dataset.choice;
   const action = e.target.dataset.action;
 
-  // ===== VALG ===== //
-  if (action === "start") return showScene1();
+  if (action === "start") showScene1();
 
   if (choice === "click") {
     score += 0;
-    renderTopbar();
-    showFeedbackClick();
+    showFeedback("danger", "Du klikkede på linket", "+0 point");
   }
 
   if (choice === "delete") {
     score += 75;
-    renderTopbar();
-    showFeedbackDelete();
+    showFeedback("warning", "Godt du ikke klikkede", "+75 point");
   }
 
   if (choice === "report") {
     score += 100;
-    renderTopbar();
-    showFeedbackReport();
+    showFeedback("success", "Rigtigt håndteret!", "+100 point");
   }
 
-  // ===== ACTIONS ===== //
-  if (action === "highlight") {
-    showHighlight();
-  }
-
-  if (action === "next") {
-    nextScene();
-  }
+  if (action === "next") showStartScreen();
 });
+
 
 // ================= FEEDBACK ================= //
 
-function showFeedbackClick() {
+function showFeedback(type, title, points) {
   app.innerHTML = `
-    <section class="card danger">
-      <h2>Du klikkede på linket</h2>
-      <p>Det kan være farligt at klikke på mistænkelige links.</p>
-      <p class="points">+0 point</p>
+    <section class="card ${type}">
+      <h2>${title}</h2>
+      <p class="points">${points}</p>
 
-      <button class="btn" data-action="highlight">Se hvad du missede</button>
+      <button class="btn" data-action="next">Tilbage</button>
     </section>
   `;
 }
 
-function showFeedbackDelete() {
-  app.innerHTML = `
-    <section class="card warning">
-      <h2>Godt du ikke klikkede</h2>
-      <p>Du undgik risikoen, men kunne have rapporteret mailen.</p>
-      <p class="points">+75 point</p>
-
-      <button class="btn" data-action="highlight">Se tegnene</button>
-    </section>
-  `;
-}
-
-function showFeedbackReport() {
-  app.innerHTML = `
-    <section class="card success">
-      <h2>Rigtigt håndteret!</h2>
-      <p>Du genkendte phishing og hjalp med at beskytte andre.</p>
-      <p class="points">+100 point</p>
-
-      <button class="btn" data-action="highlight">Se tegnene</button>
-    </section>
-  `;
-}
-
-// ================= HIGHLIGHT ================= //
-
-function showHighlight() {
-  app.innerHTML = `
-    <section class="card">
-      <h2>Sådan opdager du phishing</h2>
-      <ul>
-        <li>Generisk hilsen ("Hej")</li>
-        <li>Mistænkelig afsender</li>
-        <li>Uofficiel URL</li>
-      </ul>
-
-      <button class="btn" data-action="next">Gå videre</button>
-    </section>
-  `;
-}
-
-// ================= NEXT ================= //
-
-function nextScene() {
-  app.innerHTML = `
-    <section class="card">
-      <h2>Scene 2 kommer her</h2>
-      <p>Din score: ${score}</p>
-    </section>
-  `;
-}
 
 // ================= INIT ================= //
 
 showStartScreen();
-renderTopbar();

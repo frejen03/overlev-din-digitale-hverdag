@@ -13,20 +13,6 @@ $space: 1rem;
 $radius: 1rem;
 
 
-// ================= MIXIN ================= //
-
-@mixin button {
-  display: block;
-  width: 100%;
-  padding: $space / 2;
-  border: none;
-  border-radius: $radius / 2;
-  background: $primary;
-  color: white;
-  cursor: pointer;
-}
-
-
 // ================= BASE ================= //
 
 * {
@@ -41,38 +27,24 @@ body {
 }
 
 
-// ================= LAYOUT ================= //
-
-#app {
-  min-height: 100vh;
-}
-
-
 // ================= TOPBAR ================= //
 
 .topbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: $space * 1.5;
-  background: $bg;
-  color: $text-light;
+  padding: 1.5rem;
+}
 
-  &__left {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+.topbar__left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
 
-    h3 {
-      font-size: 1.2rem;
-    }
-  }
-
-  &__right {
-    display: flex;
-    align-items: center;
-    gap: $space;
-  }
+.topbar__right {
+  display: flex;
+  gap: 1rem;
 }
 
 .logo {
@@ -80,9 +52,9 @@ body {
 }
 
 .score {
-  border: 1px solid $text-light;
-  padding: 0.4rem 0.8rem;
-  border-radius: $radius / 2;
+  border: 1px solid rgba(255,255,255,0.3);
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
 }
 
 .info-btn {
@@ -90,12 +62,90 @@ body {
   border: 1px solid $text-light;
   color: $text-light;
   padding: 0.4rem 0.8rem;
-  border-radius: $radius / 2;
-  cursor: pointer;
+  border-radius: 0.5rem;
+}
 
-  &:hover {
-    background: rgba(255,255,255,0.1);
+
+// ================= HOME / HERO ================= //
+
+.home {
+  min-height: 100vh;
+  background: url("../img/forside-bg.png") no-repeat center;
+  background-size: cover;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 5rem 6rem 4rem;
+}
+
+.hero__left {
+  max-width: 550px;
+
+  h1 {
+    font-size: 3.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
   }
+
+  p {
+    margin-bottom: 1.2rem;
+    line-height: 1.6;
+  }
+}
+
+
+// ================= FEATURES ================= //
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  margin-top: 3rem;
+  padding: 0 6rem 2rem;
+}
+
+.feature {
+  flex: 1;
+  max-width: 320px;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  background: $bg;
+  padding: 1.2rem 1.5rem;
+  border-radius: 16px;
+
+  border: 1px solid rgba(255,255,255,0.15);
+  min-height: 100px;
+
+  h4 {
+    margin-bottom: 0.3rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    opacity: 0.85;
+    line-height: 1.4;
+  }
+}
+
+.icon {
+  font-size: 1.8rem;
+}
+
+
+// ================= TAGLINE ================= //
+
+.tagline {
+  text-align: center;
+  margin-top: 2rem;
+  padding-bottom: 3rem;
+  opacity: 0.7;
 }
 
 
@@ -104,55 +154,33 @@ body {
 .card {
   background: $text-light;
   color: $bg;
-  padding: $space * 2;
-  border-radius: $radius;
-  max-width: 600px;
-  width: 100%;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 500px;
+  margin: 3rem auto;
   text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-
-  h2 {
-    margin-bottom: $space;
-  }
-
-  p {
-    margin-top: $space;
-  }
-
-  ul {
-    margin-top: $space;
-    list-style: none;
-
-    li {
-      margin: $space 0;
-    }
-  }
 }
 
 
 // ================= STATES ================= //
 
-.success {
-  border-left: 8px solid $success;
-  background: lighten($success, 40%);
-}
-
-.warning {
-  border-left: 8px solid $warning;
-  background: lighten($warning, 40%);
-}
-
-.danger {
-  border-left: 8px solid $danger;
-  background: lighten($danger, 40%);
-}
+.success { border-left: 6px solid $success; }
+.warning { border-left: 6px solid $warning; }
+.danger { border-left: 6px solid $danger; }
 
 
 // ================= BUTTON ================= //
 
 .btn {
-  @include button;
-  margin-top: $space;
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: $primary;
+  color: white;
+  cursor: pointer;
 
   &:hover {
     background: $hover;
@@ -160,114 +188,39 @@ body {
 }
 
 .start-btn {
+  width: fit-content;
+  padding: 0.9rem 2rem;
+  margin: 1.5rem 0 0.8rem;
+
   background: #4caf50;
-  width: auto;
-  padding: $space;
-  margin-top: $space;
+  color: white;
+  border-radius: 999px; // pill
+
+  transition: 0.2s ease;
 
   &:hover {
     background: #3e8e41;
+    transform: translateY(-1px);
   }
-}
-
-
-// ================= START SCREEN ================= //
-
-.start {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  padding: 2rem;
-}
-
-.start__content {
-  max-width: 500px;
-  justify-self: center;
-
-  h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-
-  p {
-    margin-bottom: 1rem;
-  }
-}
-
-// 👉 NY: rigtig image-kolonne
-.start__image {
-  background: url("../img/forside-bg.png") no-repeat center;
-  background-size: contain;
-}
-
-
-// ================= FEATURES ================= //
-
-.features {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: $space;
-  margin-top: $space * 2;
-}
-
-.feature {
-  background: rgba(0, 0, 0, 0.4);
-  padding: $space;
-  border-radius: $radius;
-  backdrop-filter: blur(5px);
-
-  h4 {
-    margin-bottom: 0.5rem;
-  }
-
-  p {
-    font-size: 0.9rem;
-    opacity: 0.9;
-  }
-}
-
-.feature:last-child {
-  grid-column: span 2;
-}
-
-
-// ================= EXTRA ================= //
-
-.points {
-  margin-top: $space;
-  font-weight: bold;
-}
-
-.time {
-  opacity: 0.8;
-  font-size: 0.9rem;
-}
-
-.tagline {
-  margin-top: $space * 2;
-  opacity: 0.8;
-  font-size: 0.9rem;
 }
 
 
 // ================= RESPONSIVE ================= //
 
 @media (max-width: 768px) {
-  .start {
+  .hero {
     grid-template-columns: 1fr;
-  }
-
-  .start__image {
-    height: 200px;
-    background-size: contain;
+    padding: 3rem 2rem;
   }
 
   .features {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
   }
 
-  .feature:last-child {
-    grid-column: span 1;
+  .feature {
+    width: 100%;
+    max-width: 400px;
   }
 }
