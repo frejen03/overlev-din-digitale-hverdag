@@ -5,6 +5,7 @@ function renderTopbar() {
   topbar.innerHTML = `
     <div class="topbar">
       <div class="topbar__left">
+        <span class="logo">🛡️</span>
         <h3>Overlev din digitale hverdag</h3>
       </div>
 
@@ -42,7 +43,32 @@ function showStartScreen() {
         </button>
 
         <p class="time">Det tager ca. 10-15 minutter</p>
+
+        <!-- NYT: BOXES -->
+        <div class="features">
+          <div class="feature">
+            <h4>Træf valg</h4>
+            <p>Du vælger, hvad du gør i realistiske situationer.</p>
+          </div>
+
+          <div class="feature">
+            <h4>Få feedback</h4>
+            <p>Se konsekvenserne af dine valg.</p>
+          </div>
+
+          <div class="feature">
+            <h4>Bliv klogere</h4>
+            <p>Lær at spotte trusler og tag bedre beslutninger online.</p>
+          </div>
+        </div>
+
+        <!-- NYT: FOOTER TEXT -->
+        <p class="tagline">
+          Små valg i dag – større sikkerhed i morgen.
+        </p>
+
       </div>
+      <div class="start__image"></div>
     </section>
   `;
 }
@@ -173,3 +199,4 @@ function nextScene() {
 // ================= INIT ================= //
 
 showStartScreen();
+renderTopbar();

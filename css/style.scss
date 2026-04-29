@@ -48,7 +48,58 @@ body {
 }
 
 
-// ================= COMPONENTS ================= //
+// ================= TOPBAR ================= //
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $space * 1.5;
+  background: $bg;
+  color: $text-light;
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    h3 {
+      font-size: 1.2rem;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: $space;
+  }
+}
+
+.logo {
+  font-size: 1.5rem;
+}
+
+.score {
+  border: 1px solid $text-light;
+  padding: 0.4rem 0.8rem;
+  border-radius: $radius / 2;
+}
+
+.info-btn {
+  background: transparent;
+  border: 1px solid $text-light;
+  color: $text-light;
+  padding: 0.4rem 0.8rem;
+  border-radius: $radius / 2;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(255,255,255,0.1);
+  }
+}
+
+
+// ================= CARD ================= //
 
 .card {
   background: $text-light;
@@ -108,44 +159,6 @@ body {
   }
 }
 
-
-// ================= EXTRA ================= //
-
-.points {
-  margin-top: $space;
-  font-weight: bold;
-}
-
-.start {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 2rem;
-
-  background: linear-gradient(
-      to right,
-      rgba(2, 20, 43, 0.9),
-      rgba(2, 20, 43, 0.6)
-    ),
-    url("../img/forside-bg.png"); // din illustration
-
-  background-size: cover;
-  background-position: center;
-
-  &__content {
-    max-width: 500px;
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    p {
-      margin-bottom: 1rem;
-    }
-  }
-}
-
 .start-btn {
   background: #4caf50;
   width: auto;
@@ -157,7 +170,104 @@ body {
   }
 }
 
+
+// ================= START SCREEN ================= //
+
+.start {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 2rem;
+}
+
+.start__content {
+  max-width: 500px;
+  justify-self: center;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+// 👉 NY: rigtig image-kolonne
+.start__image {
+  background: url("../img/forside-bg.png") no-repeat center;
+  background-size: contain;
+}
+
+
+// ================= FEATURES ================= //
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: $space;
+  margin-top: $space * 2;
+}
+
+.feature {
+  background: rgba(0, 0, 0, 0.4);
+  padding: $space;
+  border-radius: $radius;
+  backdrop-filter: blur(5px);
+
+  h4 {
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+}
+
+.feature:last-child {
+  grid-column: span 2;
+}
+
+
+// ================= EXTRA ================= //
+
+.points {
+  margin-top: $space;
+  font-weight: bold;
+}
+
 .time {
   opacity: 0.8;
   font-size: 0.9rem;
+}
+
+.tagline {
+  margin-top: $space * 2;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+
+// ================= RESPONSIVE ================= //
+
+@media (max-width: 768px) {
+  .start {
+    grid-template-columns: 1fr;
+  }
+
+  .start__image {
+    height: 200px;
+    background-size: contain;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .feature:last-child {
+    grid-column: span 1;
+  }
 }
