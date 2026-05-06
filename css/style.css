@@ -163,6 +163,72 @@ body {
   transform: translateY(-1px);
 }
 
+.intro {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+}
+
+.journey {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.journey__step {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem 1.5rem;
+  border-radius: 999px;
+  opacity: 0.5;
+}
+
+.journey__step.active {
+  background: #4caf50;
+  opacity: 1;
+}
+
+.journey__line {
+  width: 60px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.intro-card {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 3rem;
+  border-radius: 1.5rem;
+  max-width: 700px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+.intro-card h2 {
+  margin-bottom: 1.5rem;
+}
+.intro-card p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+.intro-card blockquote {
+  font-size: 1.2rem;
+  margin: 2rem 0;
+  font-style: italic;
+}
+
+.next-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  background: #4caf50;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;

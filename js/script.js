@@ -79,6 +79,48 @@ function showStartScreen() {
   `;
 }
 
+// =============== INTRODUKTION 1 ============= //
+function showScene1Intro() {
+  app.innerHTML = `
+    <section class="intro">
+
+      <div class="journey">
+        <div class="journey__step active">🏠 Hjem</div>
+        <div class="journey__line"></div>
+
+        <div class="journey__step">🏫 Skole</div>
+        <div class="journey__line"></div>
+
+        <div class="journey__step">☕ Café</div>
+      </div>
+
+      <div class="intro-card">
+        <h2>Scene 1: Hjemme</h2>
+
+        <p>
+          Du står op og åbner din computer.
+        </p>
+
+        <p>
+          Du har fået en mail fra “Studieadmin”
+          med teksten:
+        </p>
+
+        <blockquote>
+          “Vigtig besked – log ind her”
+        </blockquote>
+
+        <p>Hvad gør du?</p>
+
+        <button class="next-btn" data-action="scene1">
+          →
+        </button>
+      </div>
+
+    </section>
+  `;
+}
+
 
 // ================= SCENE 1 ================= //
 
@@ -121,7 +163,7 @@ app.addEventListener("click", (e) => {
   const choice = e.target.dataset.choice;
   const action = e.target.dataset.action;
 
-  if (action === "start") showScene1();
+  if (action === "start") showScene1Intro();
 
   if (choice === "click") {
     score += 0;
@@ -139,6 +181,10 @@ app.addEventListener("click", (e) => {
   }
 
   if (action === "next") showStartScreen();
+
+  if (action === "scene1") {
+    showScene1();
+  }
 });
 
 
