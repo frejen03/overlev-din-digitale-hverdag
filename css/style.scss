@@ -43,17 +43,36 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 1.5rem 2rem;
+  height: 100px;
+  width: auto;
+  padding: 2rem 2rem;
 
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(10px);
 }
 
 .topbar__left {
+
   display: flex;
   align-items: center;
   gap: 0.7rem;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  h3 {
+    line-height: 1.1;
+    font-size: 1.5rem;
+  }
+
+  p {
+    line-height: 1.4;
+    font-size: 0.95rem;
+    opacity: 0.95;
+  }
 }
 
 .topbar__right {
@@ -62,14 +81,16 @@ main {
   gap: 1rem;
 }
 
-.logo {
-  font-size: 1.7rem;
+.site-icon {
+  width: 30px;
+  object-fit: contain;
 }
 
 .score {
   border: 1px solid rgba(255,255,255,0.25);
   padding: 0.7rem 1rem;
-  border-radius: 999px;
+  border-radius: 10px;
+  font-size: 0.95rem;
 }
 
 .info-btn {
@@ -77,9 +98,10 @@ main {
   color: $text-light;
 
   border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 999px;
+  border-radius: 10px;
 
   padding: 0.7rem 1rem;
+  font-size: 0.95rem;
 
   cursor: pointer;
 }
@@ -87,16 +109,23 @@ main {
 // ================= STAGE ================= //
 
 .stage {
-  min-height: 100vh;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
 }
 
 
 // ================= HOME ================= //
 
 .home {
-  min-height: 100vh;
+  flex: 1;
   background: url("../img/forside-bg.png") no-repeat center;
   background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
 }
 
 // ================= HERO ================= //
@@ -111,16 +140,21 @@ main {
   max-width: 550px;
 
   h1 {
-    font-size: 4rem;
+    font-size: 3.5rem;
     line-height: 1.1;
+    margin-top: 1rem;
     margin-bottom: 1.5rem;
   }
 
   p {
     line-height: 1.6;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
+}
+
+.hero__left .time {
+  font-size: 1rem;
+  opacity: 0.9;
 }
 
 // ================= BUTTONS ================= //
@@ -131,36 +165,118 @@ main {
 }
 
 .start-btn {
-  background: $success;
-  color: white;
-  padding: 1rem 2rem;
-  border-radius: 999px;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
 
-  font-size: 1rem;
-  font-weight: bold;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+
+  background: linear-gradient(
+    135deg,
+    #27b462,
+    #1f9d55
+  );
+
+  color: white;
+
+  padding: 1.3rem 4rem;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  min-width: 240px;
+
+  border-radius: 80px;
+
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+
+  transition:
+    transform 0.2s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
 
   &:hover {
+
+    background: linear-gradient(
+      135deg,
+      #38c172,
+      #1f9d55
+    );
+
     transform: translateY(-2px);
+
+    box-shadow:
+      0 0 25px rgba(99, 210, 107, 0.45);
   }
 }
 
+.play-icon {
+  position: absolute;
+  left: 3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.btn-text {
+  display: block;
+}
+
 .next-btn {
-  width: 70px;
-  height: 70px;
-  border: none;
-  border-radius: 50%;
-  background: $success;
+  background: linear-gradient(
+      135deg,
+      #27b462,
+      #1f9d55
+    );
+
+  width: 220px;
+  padding: 0.9rem 1.5rem;
+  border-radius: 999px;
   color: white;
-  margin-top: 2rem;
-  
-  font-size: 1.8rem;
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  transition:
+    transform 0.2s ease,
+    background 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+
+    background: linear-gradient(
+      135deg,
+      #38c172,
+      #1f9d55
+    );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+      0 0 25px rgba(99, 210, 107, 0.45);
+  }
+}
+
+.back-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.95rem;
+  font-weight: 500;
   cursor: pointer;
   transition: 0.2s ease;
 
   &:hover {
-    transform: scale(1.05);
+    color: white;
+    transform: translateX(-2px);
   }
 }
 
@@ -170,38 +286,37 @@ main {
   display: flex;
   justify-content: center;
   gap: 2rem;
-
-  padding: 2rem 6rem;
+  margin-top: 1.8rem;
 }
 
 .feature {
   flex: 1;
   max-width: 360px;
-  min-height: 120px;
   display: flex;
   align-items: center;
   gap: 1rem;
   background: rgba(0, 0, 0, 0.45);
-
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 20px;
-  padding: 1.5rem;
-
+  padding: 1.1rem 1.3rem;
   backdrop-filter: blur(8px);
 
   h4 {
-    margin-bottom: 0.4rem;
-    font-size: 1.2rem;
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
   }
 
   p {
-    line-height: 1.5;
+    line-height: 1.4;
+    font-size: 1rem;
     opacity: 0.9;
   }
 }
 
-.icon {
-  font-size: 2rem;
+.feature-icon {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
 }
 
 
@@ -209,62 +324,99 @@ main {
 
 .tagline {
   text-align: center;
-  padding-bottom: 3rem;
+  margin-top: 1.5rem;
+  padding-bottom: 3.5rem;
   opacity: 0.8;
   font-size: 1rem;
 }
 
 
 // ================= INTRO ================= //
-
 .intro {
-  min-height: 100vh;
-  background: url("../img/forside-bg.png") no-repeat center;
+  flex: 1;
+  background: url("../img/hjemme-bg.png") no-repeat center;
   background-size: cover;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4rem 2rem;
+  padding: 1.5rem 2rem;
+  overflow: hidden;
+}
+
+// ================= INTRO WRAPPER ================= //
+
+.intro-wrapper {
+  margin-top: 0;
+  position: relative;
+
+  width: 100%;
+  max-width: 1000px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
-// ================= PROGRESS IMAGE ================= //
+// ================= PROGRESS ================= //
 
 .progress-img {
   width: 100%;
-  max-width: 1100px;
-  margin-bottom: 3rem;
+  max-width: 950px;
+  margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 
 // ================= INTRO CARD ================= //
 
 .intro-card {
-  background: rgba(0,0,0,0.45);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 24px;
-  backdrop-filter: blur(12px);
-  padding: 3rem;
-  width: 100%;
-  max-width: 700px;
+  background: rgba(0, 14, 45, 0.9);
+  border: 2px solid rgba(88, 144, 255, 0.35);
+  border-radius: 28px;
+  backdrop-filter: blur(10px);
+  width: 650px;
+  padding: 1.5rem 3rem 2rem;
   text-align: center;
+  position: relative;
 
   h2 {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+    font-size: 2rem;
+    margin-bottom: 1.8rem;
+
+    letter-spacing: 1px;
   }
 
   p {
-    line-height: 1.7;
-    margin-bottom: 1rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
+    line-height: 1.45;
+
+    margin-bottom: 0.8rem;
   }
 
   blockquote {
-    margin: 2rem 0;
-    font-size: 1.4rem;
+    font-size: 1.15rem;
     font-style: italic;
+    margin: 1.6rem 0;
+    opacity: 0.95;
   }
+}
+
+.intro-top {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+// ================= LAPTOP ================= //
+
+.laptop {
+  position: absolute;
+  right: 45px;
+  bottom: -55px;
+  width: 250px;
+
+  z-index: 2;
 }
 
 
@@ -372,4 +524,194 @@ main {
   .hero__left h1 {
     font-size: 3rem;
   }
+}
+
+// ================= SCENE 1 ================= //
+
+.scene1 {
+  flex: 1;
+
+  background:
+    url("../img/hjemme-bg.png")
+    no-repeat center;
+
+  background-size: cover;
+
+  overflow: hidden;
+
+  padding: 2rem 3rem;
+}
+
+.scene1-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3rem;
+
+  height: 100%;
+}
+
+
+// ================= TOPBAR CENTER ================= //
+
+.topbar__center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.progress-top {
+  width: 600px;
+}
+
+
+// ================= SCENE CARD ================= //
+
+.scene1-card {
+
+  width: 27vw;
+
+  background: rgba(8, 33, 63, 0.95);
+
+  border:
+    2px solid rgba(57, 155, 255, 0.4);
+
+  border-radius: 26px;
+
+  padding: 1.5rem;
+
+  backdrop-filter: blur(10px);
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+  }
+}
+
+.scene1-subtitle {
+  font-size: 1rem;
+  line-height: 1.5;
+
+  margin-bottom: 2rem;
+}
+
+
+// ================= CHOICE BUTTONS ================= //
+
+.choice-btn {
+
+  width: 100%;
+
+  display: flex;
+  align-items: flex-start;
+
+  gap: 1rem;
+
+  text-align: left;
+
+  padding: 0.9rem 1rem;
+
+  border-radius: 80px;
+
+  margin-bottom: 0.8rem;
+
+  border: none;
+
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+  h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.35rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.35;
+  }
+}
+
+.choice-icon {
+  width: 30px;
+  flex-shrink: 0;
+}
+
+
+// ================= COLORS ================= //
+
+.phishing-btn {
+  background: #bcf1e4;
+  color: #102314;
+
+  border: 3px solid #3ea684;
+
+    &:hover {
+    background: #82ddd2;
+    border-color: #3ea684;
+  }
+}
+
+.warning-btn {
+  background: #f6dfc4;
+  color: #2a1b00;
+
+  border: 3px solid #ff9d2f;
+
+    &:hover {
+    background: #edc795;
+    border-color: #ff920f;
+  }
+}
+
+.delete-btn {
+  background: #dddaf5;
+  color: #1b1630;
+
+  border: 3px solid #7b61ff;
+
+    &:hover {
+    background: #bcb4ec;
+    border-color: #684cff;
+  }
+}
+
+
+// ================= TIP BUTTON ================= //
+
+.tip-btn {
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  gap: 0.5rem;
+
+  margin-top: 1rem;
+
+  background: transparent;
+  color: white;
+
+  border: 2px solid rgba(255,255,255,0.4);
+  border-radius: 10px;
+
+  padding: 0.9rem 1.4rem;
+
+  font-size: 1rem;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+
+  &:hover {
+    background: white;
+    color: #02142b;
+  }
+}
+
+
+// ================= LAPTOP ================= //
+
+.scene1-laptop {
+  width: 60vw;
 }

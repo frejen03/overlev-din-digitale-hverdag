@@ -37,7 +37,7 @@ const showStartScreen = () => {
     <header class="topbar">
 
       <div class="topbar__left">
-        <span class="logo">🛡️</span>
+        <img src="img/nav-logo.png" alt="" class="site-icon">
         <h3>Overlev din digitale hverdag</h3>
       </div>
 
@@ -60,17 +60,22 @@ const showStartScreen = () => {
 
         <div class="hero__left">
 
-          <h1>
-            Overlev din digitale hverdag
-          </h1>
+          <h1>Overlev din <br>
+          digitale hverdag</h1>
 
           <p>
-            Gennemfør 3 scenarier og lær at undgå phishing,
-            malware og usikre netværk.
+            Gennemfør 3 scenarier og lær at undgå digitale <br>
+            trusler som phishing, malware og usikre netværk.
           </p>
 
-          <button class="btn start-btn">
-            Start spillet
+          <button class="btn start-btn" data-action="start">
+            <span class="play-icon">
+              ▶
+            </span>
+            
+            <span class="btn-text">
+              Start
+            </span>
           </button>
 
           <p class="time">
@@ -87,7 +92,7 @@ const showStartScreen = () => {
       <section class="features">
 
         <div class="feature">
-          <span class="icon">🎯</span>
+          <img src="img/feature-logo1.png" alt="" class="feature-icon">
 
           <div>
             <h4>Træf valg</h4>
@@ -100,7 +105,7 @@ const showStartScreen = () => {
 
 
         <div class="feature">
-          <span class="icon">👍</span>
+          <img src="img/feature-logo2.png" alt="" class="feature-icon">
 
           <div>
             <h4>Få feedback</h4>
@@ -113,7 +118,7 @@ const showStartScreen = () => {
 
 
         <div class="feature">
-          <span class="icon">🧠</span>
+          <img src="img/feature-logo3.png" alt="" class="feature-icon">
 
           <div>
             <h4>Bliv klogere</h4>
@@ -146,7 +151,7 @@ const showScene1Intro = () => {
     <header class="topbar">
 
       <div class="topbar__left">
-        <span class="logo">🛡️</span>
+        <img src="img/nav-logo.png" alt="" class="site-icon">
         <h3>Overlev din digitale hverdag</h3>
       </div>
 
@@ -162,33 +167,50 @@ const showScene1Intro = () => {
     <section class="intro">
 
       <img
-        class="progress-img"
-        src="img/progress-scene1.png"
+        src="img/progress-bar-scene1-v3.png"
         alt="Progression"
+        class="progress-img"
       >
 
-      <div class="intro-card">
 
-        <h2>HJEMME</h2>
+      <div class="intro-wrapper">
 
-        <p>
-          Du står op og åbner din computer.
-        </p>
+        <div class="intro-card">
 
-        <p>
-          Du har fået en mail fra “Studieadmin”
-          med teksten:
-        </p>
+          <div class="intro-top">
+            <button class="back-btn" data-action="back">
+              ← Tilbage
+            </button>
+          </div>
 
-        <blockquote>
-          “Vigtig besked – log ind her”
-        </blockquote>
+          <h2>Mail fra “Studieadmin”</h2>
 
-        <p>Hvad gør du?</p>
+          <p>
+            Du står op og åbner din computer
+            for at tjekke beskeder.
+          </p>
 
-        <button class="next-btn">
-          →
-        </button>
+          <p>
+            Du har modtaget en mail fra
+            "Studieadmin".
+          </p>
+
+          <blockquote>
+            “Vigtig besked - log ind her”
+          </blockquote>
+
+          <button class="next-btn btn" data-action="open-mail">
+            Åben mail
+          </button>
+
+        </div>
+
+
+        <img
+          src="img/pc-intro1.png"
+          alt="Computer"
+          class="laptop"
+        >
 
       </div>
 
@@ -207,44 +229,147 @@ const showScene1 = () => {
     <header class="topbar">
 
       <div class="topbar__left">
-        <span class="logo">🛡️</span>
+
+        <img
+          src="img/nav-logo.png"
+          alt=""
+          class="site-icon"
+        >
+
         <h3>Overlev din digitale hverdag</h3>
+
       </div>
 
+
+      <div class="topbar__center">
+
+        <img
+          src="img/mini-progressbar-1-v2.png"
+          alt=""
+          class="progress-top"
+        >
+
+      </div>
+
+
       <div class="topbar__right">
+
         <div class="score">
           ⭐ ${score} / 300 point
         </div>
+
       </div>
 
     </header>
 
 
-    <section class="card">
 
-      <h2>
-        Du har modtaget en mail
-      </h2>
+    <section class="scene1">
 
-      <p>
-        “Mistænkelig aktivitet på din studieprofil.
-        Log ind nu for at sikre din konto.”
-      </p>
+      <div class="scene1-wrapper">
 
 
-      <div class="choices">
+        <!-- LEFT CARD -->
 
-        <button class="btn">
-          Klik på linket
-        </button>
+        <div class="scene1-card">
 
-        <button class="btn">
-          Slet mailen
-        </button>
+          <h2>Hvad gør du?</h2>
 
-        <button class="btn">
-          Rapportér mailen
-        </button>
+          <p class="scene1-subtitle">
+            Du har fået en mail med en
+            <strong>vigtig besked</strong>
+          </p>
+
+
+          <!-- CHOICE 1 -->
+
+          <button class="choice-btn phishing-btn">
+
+            <img
+              src="img/link-icon.png"
+              alt=""
+              class="choice-icon"
+            >
+
+            <div>
+
+              <h4>Klikker på linket</h4>
+
+              <p>
+                Åbner linket for at bekræfte min konto
+              </p>
+
+            </div>
+
+          </button>
+
+
+          <!-- CHOICE 2 -->
+
+          <button class="choice-btn warning-btn">
+
+            <img
+              src="img/rapport-icon.png"
+              alt=""
+              class="choice-icon"
+            >
+
+            <div>
+
+              <h4>Rapporterer mail som phishing</h4>
+
+              <p>
+                Jeg markerer mailen som phishing og advarer andre
+              </p>
+
+            </div>
+
+          </button>
+
+
+          <!-- CHOICE 3 -->
+
+          <button class="choice-btn delete-btn">
+
+            <img
+              src="img/trash-icon.png"
+              alt=""
+              class="choice-icon"
+            >
+
+            <div>
+
+              <h4>Jeg sletter mailen</h4>
+
+              <p>
+                Jeg sletter mailen uden at klikke på noget
+              </p>
+
+            </div>
+
+          </button>
+
+
+
+          <!-- TIP BUTTON -->
+
+          <button class="tip-btn">
+            <img src="img/lightbulb-icon.png" alt="" class="tip-icon">
+            Tip?
+
+          </button>
+
+        </div>
+
+
+
+        <!-- LAPTOP -->
+
+        <img
+          src="img/laptop-scene1.png"
+          alt=""
+          class="scene1-laptop"
+        >
 
       </div>
 
@@ -278,31 +403,41 @@ const showFeedback = (type, title, points) => {
 };
 
 
-// ================= BRANCHING ================= //
-
 const nextStage = (e) => {
 
-  const btnText = e.target.textContent.trim();
+  const btn = e.target.closest("button");
 
-  switch (btnText) {
+  // Hvis der ikke blev klikket på en knap
+  if (!btn) return;
 
-    // ===== START ===== //
+  const action = btn.dataset.action;
+  const btnText = btn.textContent.trim();
 
-    case "Start spillet":
+
+  // ===== ACTIONS ===== //
+
+  switch (action) {
+
+    case "start":
       showScene1Intro();
     break;
 
-
-    // ===== INTRO ===== //
-
-    case "→":
-      showScene1();
+    case "back":
+      showStartScreen();
     break;
 
+    case "open-mail":
+      showScene1();
+    break;
+  }
 
-    // ===== SCENE 1 ===== //
+
+  // ===== TEXT BUTTONS ===== //
+
+  switch (btnText) {
 
     case "Klik på linket":
+
       score += 0;
 
       showFeedback(
@@ -310,10 +445,12 @@ const nextStage = (e) => {
         "Du klikkede på linket",
         "+0 point"
       );
+
     break;
 
 
     case "Slet mailen":
+
       score += 75;
 
       showFeedback(
@@ -321,10 +458,12 @@ const nextStage = (e) => {
         "Godt du ikke klikkede",
         "+75 point"
       );
+
     break;
 
 
     case "Rapportér mailen":
+
       score += 100;
 
       showFeedback(
@@ -332,15 +471,16 @@ const nextStage = (e) => {
         "Rigtigt håndteret!",
         "+100 point"
       );
+
     break;
 
 
-    // ===== RESET ===== //
-
     case "Tilbage til start":
+
       score = 0;
 
       showStartScreen();
+
     break;
 
 
