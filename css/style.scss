@@ -109,7 +109,7 @@ main {
 // ================= STAGE ================= //
 
 .stage {
-  height: 100vh;
+  min-height: 100vh;
 
   display: flex;
   flex-direction: column;
@@ -485,42 +485,6 @@ main {
   margin: 2rem 0;
 }
 
-
-// ================= RESPONSIVE ================= //
-
-@media (max-width: 900px) {
-
-  .hero {
-    grid-template-columns: 1fr;
-    padding: 3rem 2rem;
-  }
-
-  .hero__left {
-    max-width: 100%;
-  }
-
-  .features {
-    flex-direction: column;
-    align-items: center;
-
-    padding: 2rem;
-  }
-
-  .feature {
-    width: 100%;
-    max-width: 500px;
-  }
-
-  .intro-card,
-  .card {
-    padding: 2rem;
-  }
-
-  .hero__left h1 {
-    font-size: 3rem;
-  }
-}
-
 // ================= SCENE 1 ================= //
 
 .scene1 {
@@ -566,6 +530,7 @@ main {
 .scene1-card {
 
   width: 27vw;
+  min-width: 320px;
 
   background: rgba(8, 33, 63, 0.95);
 
@@ -1103,4 +1068,79 @@ main {
 .malware-layout .next-btn {
 
   margin-top: 2rem;
+}
+
+// ================= RESPONSIVE ================= //
+
+@media (max-width: 900px) {
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 3rem 2rem;
+  }
+
+  .hero__left {
+    max-width: 100%;
+  }
+
+  .features {
+    flex-direction: column;
+    align-items: center;
+
+    padding: 2rem;
+  }
+
+  .feature {
+    width: 100%;
+    max-width: 500px;
+  }
+
+  .intro-card,
+  .card {
+    padding: 2rem;
+  }
+
+  .hero__left h1 {
+    font-size: 3rem;
+  }
+}
+
+
+
+// ================= SCENE RESPONSIVE ================= //
+
+@media (max-width: 1100px) {
+
+  .scene1-wrapper {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 2rem;
+  }
+
+  .scene1-card {
+    width: 100%;
+    max-width: 650px;
+    min-width: unset;
+  }
+
+  .scene1-laptop,
+  .scene1-login-laptop,
+  .scene3-laptop {
+    width: 90%;
+    max-width: 700px;
+  }
+
+  .malware-info,
+  .ph-info {
+    grid-template-columns: 1fr;
+  }
+
+  .popup-card-malware,
+  .popup-card-info1b {
+    max-width: 95vw;
+  }
+
+  .progress-top {
+    width: 90%;
+  }
 }

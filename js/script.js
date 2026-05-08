@@ -211,7 +211,7 @@ const showScene1Intro = () => {
           </button>
         </div>
 
-        <img src="img/pc-intro1.png" alt="Computer" class="laptop">
+        <img src="img/pc-intro1.png" alt="Computer med mail" class="laptop">
       </div>
     </section>
 
@@ -269,7 +269,7 @@ const showScene1 = () => {
         </div>
 
         <!-- LAPTOP -->
-        <img src="img/laptop-scene1.png" alt="" class="scene1-laptop">
+        <img src="img/laptop-scene1.png" alt="computer med mistænkelig mail" class="scene1-laptop">
       </div>
     </section>
   `);
@@ -370,7 +370,7 @@ const showLoginScene = () => {
 
         <!-- LAPTOP -->
 
-        <img src="img/laptop-scene1.2.png" alt="" class="scene1-login-laptop" >
+        <img src="img/laptop-scene1.2.png" alt="computer med loginportal" class="scene1-login-laptop" >
       </div>
     </section>
 
@@ -390,14 +390,14 @@ const showLoginFeedback1 = () => {
 
       <h2>Åh nej! Websiden var falsk!</h2>
 
-      <div class= rød-feedback>
+      <div class="rød-feedback">
         <img src="img/0p.png" alt="" class="zero-points">
         <p> <strong> Ingen point denne gang </strong> Når du deler dine oplysninger, <br>kan hackere få adgang til din konto</p>
       </div>
 
       <p> Siden blev åbnet via et phishing-link i mailen </p>
 
-      <div class= rød-feedback>
+      <div class="rød-feedback">
         <img src="img/warning-icon.png" alt="" class="warning-icon">
         <p> Phishing-links kan potentielt forsøge <br>at installere skadelig software</p>
       </div>
@@ -436,7 +436,7 @@ const showLoginFeedback2 = () => {
       <p> Siden var nemlig falsk! Men fordi du lukkede ned, <br>blev dine loginoplysninger ikke kompromitteret. </p>
       <p> <strong> MEN </strong>du klikkede på et phishing-link i mailen </p>
 
-      <div class= gul-feedback>
+      <div class="gul-feedback">
         <img src="img/30p.png" alt="" class="tredive-points">
         <p> I nogle tilfælde kan disse links forsøge at <br>installere skadelig software på din enhed </p>
       </div>
@@ -475,7 +475,7 @@ const showLoginFeedback3 = () => {
       <p> Da du undersøgte nærmere så du, at siden ikke er officiel <br>⟶ du loggede derfor ikke ind </p>
       <p> <strong> MEN </strong>du klikkede på et phishing-link i mailen </p>
 
-      <div class= gul-feedback>
+      <div class="gul-feedback">
         <img src="img/30p.png" alt="" class="tredive-points">
         <p> I nogle tilfælde kan disse links forsøge at <br>installere skadelig software på din enhed </p>
       </div>
@@ -513,7 +513,7 @@ const showMailFeedback1 = () => {
 
       <p> Du genkendte mailen som phishing og undgik at klikke på linket</p>
 
-      <div class= grøn-feedback>
+      <div class="grøn-feedback">
         <img src="img/100p.png" alt="" class="hundred-points">
         <p> Ved at rapportere mailen hjælper du systemet med at filtrere lignende mails fremover </p>
       </div>
@@ -551,7 +551,7 @@ const showMailFeedback2 = () => {
 
       <p> Du undgik at interagere med mailen og beskytter dermed dine oplysninger</p>
 
-      <div class= gul-feedback>
+      <div class="gul-feedback">
         <img src="img/75p.png" alt="" class="syvfem-points">
         <p> Ved kun at slette mailen risikerer du dog <br>lignende mails fremover. At rapportere <br>hjælper systemet med at filtrere disse mails</p>
       </div>
@@ -588,23 +588,23 @@ const showPhishingInfo = () => {
 
       <h2>Tegn på phishing</h2>
 
-      <div class= ph-info>
-        <div class= ph-pics>
+      <div class="ph-info">
+        <div class="ph-pics">
           <img src="img/phishing-info-1.png" alt="" class="phishing-info-1">
           <img src="img/phishing-info-2.png" alt="" class="phishing-info-2">
         </div>
 
-        <div class= ph-explain>
-          <div class= ph-explain-mail>
+        <div class="ph-explain">
+          <div class="ph-explain-mail">
             <h3> Mailen </h3>
-            <p class= ph-explain-1> <strong>Generisk hilsen</strong> <br>Mailen bruger en generisk hilsen “Hej” i stedet for dit navn</p>
-            <p class= ph-explain-2> <strong>Mistænkelig afsender</strong> <br>Afsendermailen matcher ikke officielt domæne</p>
-            <p class= ph-explain-3> <strong>Mistænkeligt link</strong> <br>Linket fører ikke til en officielle platform</p>
+            <p class="ph-explain-1"> <strong>Generisk hilsen</strong> <br>Mailen bruger en generisk hilsen “Hej” i stedet for dit navn</p>
+            <p class="ph-explain-2"> <strong>Mistænkelig afsender</strong> <br>Afsendermailen matcher ikke officielt domæne</p>
+            <p class="ph-explain-3"> <strong>Mistænkeligt link</strong> <br>Linket fører ikke til en officielle platform</p>
           </div>
 
-          <div class= ph-explain-hjemmeside>
+          <div class="ph-explain-hjemmeside">
             <h3> Hjemmesiden </h3>
-            <p class= ph-explain-4> <strong>Uofficiel URL</strong> <br>URL’en matcher ikke den officielle side (studieplatformen)</p>
+            <p class="ph-explain-4"> <strong>Uofficiel URL</strong> <br>URL’en matcher ikke den officielle side (studieplatformen)</p>
           </div>
         </div>
       </div>
@@ -708,7 +708,7 @@ const showScene2 = () => {
         </div>
 
         <!-- LAPTOP -->
-        <img src="img/laptop-scene2.png" alt="" class="scene1-laptop">
+        <img src="img/laptop-scene2.png" alt="computer med google åben" class="scene1-laptop">
       </div>
     </section>
   `);
@@ -790,7 +790,7 @@ const showPdfScene = () => {
 
         <!-- LAPTOP -->
 
-        <img src="img/laptop-scene2.2.png" alt="" class="scene1-login-laptop" >
+        <img src="img/laptop-scene2.2.png" alt="hjemmeside med gratis PDF-program" class="scene1-login-laptop" >
       </div>
     </section>
 
@@ -1075,7 +1075,7 @@ const showScene3 = () => {
         </div>
 
         <!-- LAPTOP -->
-        <img src="img/laptop-scene3-v2.png" alt="" class="scene3-laptop">
+        <img src="img/laptop-scene3-v2.png" alt="computer med café wifi portal" class="scene3-laptop">
       </div>
     </section>
   `);
@@ -1205,8 +1205,8 @@ const showFinalScore = () => {
 
           <p>Du fik i alt</p>
 
-          <div class= transparent-feedback>
-          <p> <strong> ${renderScore()}</strong> </p>
+          <div class="transparent-feedback">
+            ${renderScore()}
           </div>
 
           <button class="next-btn btn" data-action="back">
@@ -1262,6 +1262,7 @@ const nextStage = (e) => {
     break;
 
     case "back":
+      score = 0;
       showStartScreen();
     break;
   //-------Scene 1-------//
