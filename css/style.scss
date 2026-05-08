@@ -708,45 +708,6 @@ main {
   }
 }
 
-
-// ================= TIP BUTTON ================= //
-
-.tip-btn {
-
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-
-  gap: 0.5rem;
-
-  margin-top: 1rem;
-
-  background: transparent;
-  color: white;
-
-  border: 2px solid rgba(255,255,255,0.4);
-  border-radius: 10px;
-
-  padding: 0.5rem 1.4rem;
-
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-
-  transition: 0.2s ease;
-
-  &:hover {
-    background: white;
-    color: #02142b;
-  }
-}
-
-.tip-icon {
-  width: 30px;
-  flex-shrink: 0;
-}
-
-
 // ================= LAPTOPS ================= //
 
 .scene1-laptop {
@@ -887,6 +848,7 @@ main {
 .gul-feedback {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 2rem;
   background-color: #fff2c1;
 }
@@ -894,6 +856,7 @@ main {
 .grøn-feedback {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 2rem;
   background-color: #cbffc1;
 }
@@ -901,6 +864,7 @@ main {
 .rød-feedback {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 2rem;
   background-color: #fabcbc;
 }
@@ -908,6 +872,7 @@ main {
 .orange-feedback {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 2rem;
   background-color: #fadabc;
 }
@@ -915,6 +880,7 @@ main {
 .transparent-feedback {
   display: flex;
   justify-content: center;
+  align-items: center;
   margin-bottom: 2rem;
 }
 
@@ -932,12 +898,13 @@ main {
   margin-top: 1rem;
   margin-left: 1rem;
 }
-
-.zero-points {
+.hundred-points,
+.tredive-points,
+.tyve-points,
+.zero-points,
+.syvfem-points {
   width: 50px;
   height: 50px;
-  flex-shrink: 0;
-  margin-top: 1rem;
 }
 
 // ================= PHISHING INFO ================= //

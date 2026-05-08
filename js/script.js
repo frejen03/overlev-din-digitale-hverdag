@@ -266,13 +266,6 @@ const showScene1 = () => {
               <p>Jeg sletter mailen uden at klikke på noget</p>
             </div>
           </button>
-
-          <!-- TIP BUTTON -->
-
-          <button class="tip-btn">
-            <img src="img/lightbulb-icon2.png" alt="" class="tip-icon">
-            Tip?
-          </button>
         </div>
 
         <!-- LAPTOP -->
@@ -373,13 +366,6 @@ const showLoginScene = () => {
               <p>Undersøg URL og afsender</p>
             </div>
           </button>
-
-          <!-- TIP BUTTON -->
-
-          <button class="tip-btn">
-            <img src="img/lightbulb-icon2.png" alt="" class="tip-icon">
-            Tip?
-          </button>
         </div>
 
         <!-- LAPTOP -->
@@ -405,7 +391,7 @@ const showLoginFeedback1 = () => {
       <h2>Åh nej! Websiden var falsk!</h2>
 
       <div class= rød-feedback>
-        <img src="img/0-points.png" alt="" class="zero-points">
+        <img src="img/0p.png" alt="" class="zero-points">
         <p> <strong> Ingen point denne gang </strong> Når du deler dine oplysninger, <br>kan hackere få adgang til din konto</p>
       </div>
 
@@ -451,7 +437,7 @@ const showLoginFeedback2 = () => {
       <p> <strong> MEN </strong>du klikkede på et phishing-link i mailen </p>
 
       <div class= gul-feedback>
-        <img src="img/warning-icon.png" alt="" class="warning-icon">
+        <img src="img/30p.png" alt="" class="tredive-points">
         <p> I nogle tilfælde kan disse links forsøge at <br>installere skadelig software på din enhed </p>
       </div>
 
@@ -490,7 +476,7 @@ const showLoginFeedback3 = () => {
       <p> <strong> MEN </strong>du klikkede på et phishing-link i mailen </p>
 
       <div class= gul-feedback>
-        <img src="img/warning-icon.png" alt="" class="warning-icon">
+        <img src="img/30p.png" alt="" class="tredive-points">
         <p> I nogle tilfælde kan disse links forsøge at <br>installere skadelig software på din enhed </p>
       </div>
 
@@ -528,7 +514,7 @@ const showMailFeedback1 = () => {
       <p> Du genkendte mailen som phishing og undgik at klikke på linket</p>
 
       <div class= grøn-feedback>
-        <img src="img/check-icon.png" alt="" class="check-icon">
+        <img src="img/100p.png" alt="" class="hundred-points">
         <p> Ved at rapportere mailen hjælper du systemet med at filtrere lignende mails fremover </p>
       </div>
 
@@ -566,7 +552,7 @@ const showMailFeedback2 = () => {
       <p> Du undgik at interagere med mailen og beskytter dermed dine oplysninger</p>
 
       <div class= gul-feedback>
-        <img src="img/warning-icon.png" alt="" class="warning-icon">
+        <img src="img/75p.png" alt="" class="syvfem-points">
         <p> Ved kun at slette mailen risikerer du dog <br>lignende mails fremover. At rapportere <br>hjælper systemet med at filtrere disse mails</p>
       </div>
 
@@ -719,13 +705,6 @@ const showScene2 = () => {
               <p>Finder programmets officielle side <br>og køber og downloader derfra</p>
             </div>
           </button>
-
-          <!-- TIP BUTTON -->
-
-          <button class="tip-btn">
-            <img src="img/lightbulb-icon2.png" alt="" class="tip-icon">
-            Tip?
-          </button>
         </div>
 
         <!-- LAPTOP -->
@@ -807,13 +786,6 @@ const showPdfScene = () => {
               <p>Finder programmets officielle side og downloader derfra</p>
             </div>
           </button>
-
-          <!-- TIP BUTTON -->
-
-          <button class="tip-btn">
-            <img src="img/lightbulb-icon2.png" alt="" class="tip-icon">
-            Tip?
-          </button>
         </div>
 
         <!-- LAPTOP -->
@@ -834,7 +806,46 @@ const showScene2Feedback1 = () => {
     <div class="popup-card-feedback">
       <h2>God beslutning!</h2>
 
-      <p> Du undgik at downloade software fra en ukendt kilde <br>og valgte i stedet den officielle hjemmeside. </p>
+      <div class= grøn-feedback>
+        <img src="img/100p.png" alt="" class="hundred-points">
+        <p> Du undgik at downloade software fra en ukendt kilde <br>og valgte i stedet den officielle hjemmeside </p>
+      </div>
+
+      <div class= gul-feedback>
+        <img src="img/warning-icon.png" alt="" class="warning-icon">
+        <p> Uofficielle downloads kan indeholde skjult malware, <br>som fx kan gøre din pc langsom </p>
+      </div>
+
+      <button class="next-btn btn">
+        Tegn på malware/phishing →
+      </button>
+    </div>
+  `;
+
+  document.body.appendChild(popup);
+
+  popup.querySelector("button")
+    .addEventListener("click", () => {
+
+      popup.remove();
+
+      showMalwareInfo();
+    });
+};
+
+//=============== FEEDBACK PDF-OFFICIAL2 ===============//
+const showScene2Feedback4 = () => {
+  const popup = document.createElement("div");
+  popup.classList.add("overlay-green");
+
+  popup.innerHTML = `
+    <div class="popup-card-feedback">
+      <h2>God beslutning!</h2>
+
+      <div class= grøn-feedback>
+        <img src="img/75p.png" alt="" class="syvfem-points">
+        <p> Du undgik at downloade software fra en ukendt kilde <br>og valgte i stedet den officielle hjemmeside </p>
+      </div>
 
       <div class= gul-feedback>
         <img src="img/warning-icon.png" alt="" class="warning-icon">
@@ -875,7 +886,7 @@ const showScene2Feedback2 = () => {
       ⟶ du har sandsynligvis downloadet software fra en usikker kilde. </p>
 
       <div class= rød-feedback>
-        <img src="img/0-points.png" alt="" class="zero-points">
+        <img src="img/0p.png" alt="" class="zero-points">
         <p> <strong> Ingen point denne gang </strong> <br>
         Uofficielle downloads kan indeholde skjult malware</p>
       </div>
@@ -1061,13 +1072,6 @@ const showScene3 = () => {
               <p>Deler internet fra din mobil</p>
             </div>
           </button>
-
-          <!-- TIP BUTTON -->
-
-          <button class="tip-btn">
-            <img src="img/lightbulb-icon2.png" alt="" class="tip-icon">
-            Tip?
-          </button>
         </div>
 
         <!-- LAPTOP -->
@@ -1094,13 +1098,13 @@ const showScene3Feedback1 = () => {
       kan overvåge trafikken eller forsøge at opsnappe data. </p>
 
       <div class= orange-feedback>
-        <img src="img/0-points.png" alt="" class="zero-points">
+        <img src="img/20p.png" alt="" class="tyve-points">
         <p> <strong> Få point denne gang </strong> <br>
         Brug helst VPN eller mobilnet, når du håndterer følsomme oplysninger på offentlige netværk.</p>
       </div>
 
       <button class="next-btn btn">
-        Se hvad du missede →
+        Se din score! →
       </button>
 
     </div>
@@ -1113,7 +1117,7 @@ const showScene3Feedback1 = () => {
 
       popup.remove();
 
-      showMalwareInfo();
+      showFinalScore();
     });
 };
 
@@ -1129,7 +1133,7 @@ const showScene3Feedback2 = () => {
       <p> VPN krypterer din forbindelse, så andre på det offentlige netværk har sværere ved at opsnappe dine data.</p>
 
       <div class= grøn-feedback>
-        <img src="img/0-points.png" alt="" class="zero-points">
+        <img src="img/100p.png" alt="" class="hundred-points">
         <p> <strong> Fuldt point denne gang! </strong> </p>
       </div>
 
@@ -1162,7 +1166,7 @@ const showScene3Feedback3 = () => {
       <p> Ved at bruge mobilnet undgår du det offentlige wifi og reducerer risikoen for overvågning eller usikre forbindelser</p>
 
       <div class= grøn-feedback>
-        <img src="img/0-points.png" alt="" class="zero-points">
+        <img src="img/100p.png" alt="" class="hundred-points">
         <p> <strong> Fuldt point denne gang! </strong> </p>
       </div>
 
@@ -1315,7 +1319,7 @@ const nextStage = (e) => {
     break;
 
     case "choice-official2":
-      showScene2Feedback1();
+      showScene2Feedback4();
       score += 75;
     break;
 
