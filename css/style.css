@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   box-sizing: border-box;
   margin: 0;
@@ -607,6 +608,17 @@ main {
   z-index: 999;
 }
 
+.overlay-green {
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 48, 4, 0.65);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
 .popup-card-feedback {
   width: 650px;
   background: white;
@@ -618,6 +630,7 @@ main {
 }
 .popup-card-feedback h2 {
   font-size: 2rem;
+  margin-bottom: 1rem;
 }
 .popup-card-feedback p {
   font-size: 1rem;
@@ -632,9 +645,38 @@ main {
   background-color: #fff2c1;
 }
 
+.grøn-feedback {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background-color: #cbffc1;
+}
+
+.rød-feedback {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background-color: #fabcbc;
+}
+
 .warning-icon {
   width: 40px;
   height: 40px;
+  flex-shrink: 0;
+  margin-top: 1rem;
+}
+
+.check-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+
+.zero-points {
+  width: 50px;
+  height: 50px;
   flex-shrink: 0;
   margin-top: 1rem;
 }
@@ -722,5 +764,79 @@ main {
 }
 
 .phishing-layout .next-btn {
+  margin-top: 2rem;
+}
+
+.malware-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.popup-card-malware {
+  width: 1400px;
+  max-width: 80vw;
+  background: #f7f7f7;
+  color: #111;
+  border-radius: 32px;
+  padding: 2rem 3rem;
+  border: 3px solid #183153;
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+.popup-card-malware h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.malware-info {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  align-items: start;
+  width: 100%;
+}
+
+.malware-info-1 {
+  width: 90%;
+  border-radius: 16px;
+  border: 2px solid #d7d7d7;
+}
+
+.malware-explain {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: start;
+  gap: 0;
+  margin: 0;
+}
+
+.malware-explain h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.malware-explain p {
+  background: #dceeff;
+  border-radius: 16px;
+  padding: 0.9rem 1.2rem;
+  line-height: 1.45;
+  font-size: 1rem;
+  margin: 0 0 1rem 0;
+}
+
+.malware-explain-1 strong,
+.malware-explain-2 strong,
+.malware-explain-3 strong {
+  color: #1180e8;
+  display: block;
+  margin-bottom: 0;
+  font-size: 1.05rem;
+}
+
+.malware-layout .next-btn {
   margin-top: 2rem;
 }/*# sourceMappingURL=style.css.map */
