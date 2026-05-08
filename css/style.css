@@ -7,7 +7,7 @@
 body {
   background: #02142b;
   color: #cff6ea;
-  font-family: Arial, sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 img {
@@ -288,9 +288,9 @@ main {
   margin-bottom: 0.8rem;
 }
 .intro-card blockquote {
-  font-size: 1.15rem;
+  font-size: 1rem;
   font-style: italic;
-  margin: 1.6rem 0;
+  margin-bottom: 2rem;
   opacity: 0.95;
 }
 
@@ -441,7 +441,7 @@ main {
   text-align: left;
   padding: 0.9rem 1rem;
   border-radius: 80px;
-  margin-bottom: 0.8rem;
+  margin-bottom: 1.5rem;
   border: none;
   cursor: pointer;
   transition: 0.2s ease;
@@ -460,34 +460,64 @@ main {
   flex-shrink: 0;
 }
 
-.phishing-btn {
+.choice-1-btn {
   background: #bcf1e4;
   color: #102314;
   border: 3px solid #3ea684;
 }
-.phishing-btn:hover {
+.choice-1-btn:hover {
   background: #82ddd2;
   border-color: #3ea684;
 }
 
-.warning-btn {
+.choice-2-btn {
   background: #f6dfc4;
   color: #2a1b00;
   border: 3px solid #ff9d2f;
 }
-.warning-btn:hover {
+.choice-2-btn:hover {
   background: #edc795;
   border-color: #ff920f;
 }
 
-.delete-btn {
+.choice-3-btn {
   background: #dddaf5;
   color: #1b1630;
   border: 3px solid #7b61ff;
 }
-.delete-btn:hover {
+.choice-3-btn:hover {
   background: #bcb4ec;
   border-color: #684cff;
+}
+
+.choice-1a-btn {
+  background: #faecb9;
+  color: #102314;
+  border: 3px solid #efb136;
+}
+.choice-1a-btn:hover {
+  background: #efb136;
+  border-color: #cf7e0b;
+}
+
+.choice-2a-btn {
+  background: #ffd5c6;
+  color: #2a1b00;
+  border: 3px solid #b85454;
+}
+.choice-2a-btn:hover {
+  background: #f4a68a;
+  border-color: #a03030;
+}
+
+.choice-3a-btn {
+  background: #cfe8fc;
+  color: #1b1630;
+  border: 3px solid #1190f8;
+}
+.choice-3a-btn:hover {
+  background: #8ac9fd;
+  border-color: #1190f8;
 }
 
 .tip-btn {
@@ -500,8 +530,9 @@ main {
   color: white;
   border: 2px solid rgba(255, 255, 255, 0.4);
   border-radius: 10px;
-  padding: 0.9rem 1.4rem;
+  padding: 0.5rem 1.4rem;
   font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: 0.2s ease;
 }
@@ -510,6 +541,46 @@ main {
   color: #02142b;
 }
 
+.tip-icon {
+  width: 30px;
+  flex-shrink: 0;
+}
+
 .scene1-laptop {
   width: 60vw;
+}
+
+.scene1-login-laptop {
+  width: 60vw;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-card {
+  width: 650px;
+  background: white;
+  color: #111;
+  border-radius: 24px;
+  padding: 3rem;
+  text-align: center;
+  border: 3px solid #183153;
+}
+.popup-card p {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+.popup-card blockquote {
+  font-size: 1.5rem;
+  font-style: italic;
+  margin-bottom: 2rem;
 }/*# sourceMappingURL=style.css.map */
