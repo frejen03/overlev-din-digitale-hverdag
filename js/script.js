@@ -2,6 +2,11 @@ const main = document.querySelector("main");
 
 let score = 0;
 
+const player = {
+  score: 0,
+  name: "Player"
+};
+
 // ================= COMPONENTS ================= //
 
 const renderScore = () => {
