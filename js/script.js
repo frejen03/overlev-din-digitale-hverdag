@@ -2,6 +2,54 @@ const main = document.querySelector("main");
 
 let score = 0;
 
+// ================= COMPONENTS ================= //
+
+const renderScore = () => {
+  return `
+    <div class="score">
+      ⭐ ${score} / 300 point
+    </div>
+  `;
+};
+
+
+const renderTopbar = (
+  progressImg = "",
+  showInfoBtn = false
+) => {
+  return `
+    <header class="topbar">
+      <div class="topbar__left">
+        <img src="img/nav-logo.png" alt="" class="site-icon">
+
+        <h3>Overlev din digitale hverdag</h3>
+      </div>
+
+      <div class="topbar__center">
+        ${
+          progressImg
+            ? `
+              <img src="${progressImg}" alt="" class="progress-top">
+            `
+            : ""
+        }
+      </div>
+
+      <div class="topbar__right">
+        ${renderScore()}
+        ${
+          showInfoBtn
+            ? `
+              <button class="info-btn">
+                Sådan spiller du
+              </button>
+            `
+            : ""
+        }
+      </div>
+    </header>
+  `;
+};
 
 // ================= UPDATE UI ================= //
 
@@ -33,26 +81,7 @@ const updateUI = (content, className = "") => {
 const showStartScreen = () => {
 
   updateUI(`
-
-    <header class="topbar">
-
-      <div class="topbar__left">
-        <img src="img/nav-logo.png" alt="" class="site-icon">
-        <h3>Overlev din digitale hverdag</h3>
-      </div>
-
-      <div class="topbar__right">
-        <div class="score">
-          ⭐ ${score} / 300 point
-        </div>
-
-        <button class="info-btn">
-          Sådan spiller du
-        </button>
-      </div>
-
-    </header>
-
+    ${renderTopbar("", true)}
 
     <div class="home">
 
@@ -147,36 +176,14 @@ const showStartScreen = () => {
 const showScene1Intro = () => {
 
   updateUI(`
-
-    <header class="topbar">
-
-      <div class="topbar__left">
-        <img src="img/nav-logo.png" alt="" class="site-icon">
-        <h3>Overlev din digitale hverdag</h3>
-      </div>
-
-      <div class="topbar__right">
-        <div class="score">
-          ⭐ ${score} / 300 point
-        </div>
-      </div>
-
-    </header>
-
+    ${renderTopbar()}
 
     <section class="intro">
 
-      <img
-        src="img/progress-bar-scene1-v3.png"
-        alt="Progression"
-        class="progress-img"
-      >
-
+      <img src="img/progress-bar-scene1-v4.png" alt="Progression" class="progress-img">
 
       <div class="intro-wrapper">
-
         <div class="intro-card">
-
           <div class="intro-top">
             <button class="back-btn" data-action="back">
               ← Tilbage
@@ -202,18 +209,10 @@ const showScene1Intro = () => {
           <button class="next-btn btn" data-action="open-mail">
             Åben mail
           </button>
-
         </div>
 
-
-        <img
-          src="img/pc-intro1.png"
-          alt="Computer"
-          class="laptop"
-        >
-
+        <img src="img/pc-intro1.png" alt="Computer" class="laptop">
       </div>
-
     </section>
 
   `);
@@ -226,43 +225,7 @@ const showScene1 = () => {
 
   updateUI(`
 
-    <header class="topbar">
-
-      <div class="topbar__left">
-
-        <img
-          src="img/nav-logo.png"
-          alt=""
-          class="site-icon"
-        >
-
-        <h3>Overlev din digitale hverdag</h3>
-
-      </div>
-
-
-      <div class="topbar__center">
-
-        <img
-          src="img/mini-progressbar-1-v2.png"
-          alt=""
-          class="progress-top"
-        >
-
-      </div>
-
-
-      <div class="topbar__right">
-
-        <div class="score">
-          ⭐ ${score} / 300 point
-        </div>
-
-      </div>
-
-    </header>
-
-
+    ${renderTopbar("img/mini-progressbar-1-v2.png")}
 
     <section class="scene1">
 
@@ -315,7 +278,7 @@ const showScene1 = () => {
           >
 
             <img
-              src="img/rapport-icon.png"
+              src="img/report-icon.png"
               alt=""
               class="choice-icon"
             >
@@ -426,82 +389,34 @@ const showLoginScene = () => {
 
   updateUI(`
 
-    <header class="topbar">
-
-      <div class="topbar__left">
-
-        <img
-          src="img/nav-logo.png"
-          alt=""
-          class="site-icon"
-        >
-
-        <h3>Overlev din digitale hverdag</h3>
-
-      </div>
-
-
-      <div class="topbar__center">
-
-        <img
-          src="img/mini-progressbar-1-v2.png"
-          alt=""
-          class="progress-top"
-        >
-
-      </div>
-
-
-      <div class="topbar__right">
-
-        <div class="score">
-          ⭐ ${score} / 300 point
-        </div>
-
-      </div>
-
-    </header>
-
-
+    ${renderTopbar("img/mini-progressbar-1-v2.png")}
 
     <section class="scene1">
-
       <div class="scene1-wrapper">
-
 
         <!-- LEFT CARD -->
 
         <div class="scene1-card">
-
           <h2>Hvad gør du?</h2>
 
           <p class="scene1-subtitle">
             Linket fører til denne loginside
           </p>
 
-
           <!-- CHOICE 1 -->
 
-          <button
-            class="choice-btn choice-1a-btn"
+          <button class="choice-btn choice-1a-btn"
             data-action="choice-login"
           >
 
-            <img
-              src="img/login-ikon.png"
-              alt=""
-              class="choice-icon"
-            >
+          <img src="img/login-ikon.png" alt="" class="choice-icon">
 
-            <div>
-
-              <h4>Login</h4>
-
-              <p>
-                Indtast oplysninger for at sikre din konto
-              </p>
-
-            </div>
+          <div>
+            <h4>Login</h4>
+            <p>
+              Indtast oplysninger for at sikre din konto
+            </p>
+          </div>
 
           </button>
 
@@ -586,6 +501,193 @@ const showLoginScene = () => {
   `);
 };
 
+//=============== FEEDBACK LOGIN ===============//
+const showLoginFeedback3 = () => {
+
+  const popup = document.createElement("div");
+
+  popup.classList.add("overlay-yellow");
+
+  popup.innerHTML = `
+  
+    <div class="popup-card-feedback">
+
+      <h2>Godt du tjekkede!</h2>
+
+      <p> Da du undersøgte nærmere så du, at siden ikke er officiel <br>⟶ du loggede derfor ikke ind </p>
+      <p> <strong> MEN </strong>du klikkede på et phishing-link i mailen </p>
+
+      <div class= gul-feedback>
+        <img src="img/warning-icon.png" alt="" class="warning-icon">
+        <p> I nogle tilfælde kan disse links forsøge at <br>installere skadelig software på din enhed </p>
+      </div>
+
+      <button class="next-btn btn">
+        Se tegn på phishing →
+      </button>
+
+    </div>
+  `;
+
+  document.body.appendChild(popup);
+
+  popup.querySelector("button")
+    .addEventListener("click", () => {
+
+      popup.remove();
+
+      showPhishingInfo();
+    });
+};
+
+//=============== INFO PHISHING 2 ===============//
+const showPhishingInfo = () => {
+
+  const popup = document.createElement("div");
+
+  popup.classList.add("overlay");
+
+  popup.innerHTML = `
+  <div class="phishing-layout">
+    <div class="popup-card-info1b">
+
+      <h2>Tegn på phishing</h2>
+
+      <div class= ph-info>
+        <div class= ph-pics>
+          <img src="img/phishing-info-1.png" alt="" class="phishing-info-1">
+          <img src="img/phishing-info-2.png" alt="" class="phishing-info-2">
+        </div>
+
+        <div class= ph-explain>
+          <div class= ph-explain-mail>
+            <h3> Mailen </h3>
+            <p class= ph-explain-1> <strong>Generisk hilsen</strong> <br>Mailen bruger en generisk hilsen “Hej” i stedet for dit navn</p>
+            <p class= ph-explain-2> <strong>Mistænkelig afsender</strong> <br>Afsendermailen matcher ikke officielt domæne</p>
+            <p class= ph-explain-3> <strong>Mistænkeligt link</strong> <br>Linket fører ikke til en officielle platform</p>
+          </div>
+
+          <div class= ph-explain-hjemmeside>
+            <h3> Hjemmesiden </h3>
+            <p class= ph-explain-4> <strong>Uofficiel URL</strong> <br>URL’en matcher ikke den officielle side (studieplatformen)</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+      <button class="next-btn btn">
+        Næste scene →
+      </button>
+    </div>
+  `;
+
+  document.body.appendChild(popup);
+
+  popup.querySelector("button")
+    .addEventListener("click", () => {
+
+      popup.remove();
+
+      showScene2Intro();
+    });
+};
+
+// ================= INTRO SCENE 2 ================= //
+
+const showScene2Intro = () => {
+
+  updateUI(`
+    ${renderTopbar()}
+
+    <section class="intro">
+
+      <img src="img/progress-bar-scene2.png" alt="Progression" class="progress-img">
+
+      <div class="intro-wrapper">
+        <div class="intro-card">
+
+          <h2>Opgave i skolen</h2>
+
+          <p>
+            Du kommer i skole, hvor der er oplæg om den kommende store opgave
+          </p>
+
+          <p>
+            Til opgaven mangler din computer programmet:
+          </p>
+
+          <blockquote>
+            “PDF Pro Editor”
+          </blockquote>
+
+          <button class="next-btn btn" data-action="find-program">
+            Find program
+          </button>
+        </div>
+      </div>
+    </section>
+
+  `);
+};
+
+// ================= SCENE 2 ================= //
+
+const showScene2 = () => {
+
+  updateUI(`
+
+    ${renderTopbar("img/mini-progressbar-2.png")}
+
+    <section class="scene1">
+      <div class="scene1-wrapper">
+
+        <!-- LEFT CARD -->
+        <div class="scene1-card">
+          <h2>Hvad gør du?</h2>
+
+          <p class="scene1-subtitle">
+            Du har brug for programmet “PDF Pro Editor” til din opgave.
+          </p>
+
+          <!-- CHOICE 1 -->
+
+          <button class="choice-btn choice-1-btn" data-action="choice-google">
+
+            <img src="img/søg-ikon.png" alt="" class="choice-icon">
+
+            <div>
+              <h4>Søger efter gratis-versioner</h4>
+              <p>Googler “PDF Pro Editor FREE download”</p>
+            </div>
+          </button>
+
+          <!-- CHOICE 2 -->
+
+          <button class="choice-btn choice-2-btn" data-action="choice-official">
+
+            <img src="img/download-icon.png" alt="" class="choice-icon">
+
+            <div>
+              <h4>Den officielle hjemmeside</h4>
+              <p>Finder programmets officielle side <br>og køber og downloader derfra</p>
+            </div>
+          </button>
+
+          <!-- TIP BUTTON -->
+
+          <button class="tip-btn">
+            <img src="img/lightbulb-icon2.png" alt="" class="tip-icon">
+            Tip?
+          </button>
+        </div>
+
+        <!-- LAPTOP -->
+        <img src="img/laptop-scene2.png" alt="" class="scene1-laptop">
+      </div>
+    </section>
+  `);
+};
+
 // ================= FEEDBACK ================= //
 
 const showFeedback = (type, title, points) => {
@@ -646,6 +748,23 @@ const nextStage = (e) => {
 
     case "choice-delete":
       score += 75;
+    break;
+
+    case "choice-login":
+      score += 0;
+    break;
+
+    case "choice-tilbage":
+      score += 25;
+    break;
+
+    case "choice-tjek":
+      showLoginFeedback3();
+      score += 30;
+    break;
+
+    case "find-program":
+      showScene2();
     break;
   }
 };

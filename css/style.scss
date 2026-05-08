@@ -237,7 +237,7 @@ main {
       #1f9d55
     );
 
-  width: 220px;
+  width: 240px;
   padding: 0.9rem 1.5rem;
   border-radius: 999px;
   color: white;
@@ -343,8 +343,6 @@ main {
   overflow: hidden;
 }
 
-// ================= INTRO WRAPPER ================= //
-
 .intro-wrapper {
   margin-top: 0;
   position: relative;
@@ -356,9 +354,6 @@ main {
   justify-content: center;
   align-items: center;
 }
-
-
-// ================= PROGRESS ================= //
 
 .progress-img {
   width: 100%;
@@ -684,7 +679,7 @@ main {
   border: 3px solid #efb136;
 
     &:hover {
-    background: #efb136;
+    background: #f4e096;
     border-color: #cf7e0b;
   }
 }
@@ -696,7 +691,7 @@ main {
   border: 3px solid #b85454;
 
     &:hover {
-    background: #f4a68a;
+    background: #f6bda8;
     border-color: #a03030;
   }
 }
@@ -708,7 +703,7 @@ main {
   border: 3px solid #1190f8;
 
     &:hover {
-    background: #8ac9fd;
+    background: #aed4f4;
     border-color: #1190f8;
   }
 }
@@ -770,7 +765,7 @@ main {
 
   background: rgba(0,0,0,0.65);
 
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(10px);
 
   display: flex;
   justify-content: center;
@@ -808,3 +803,171 @@ main {
 }
 
 //================= LOGIN ==============//
+
+//============ FEEDBACK ========== //
+.overlay-red {
+
+  position: fixed;
+  inset: 0;
+
+  background: rgba(48, 4, 4, 0.65);
+
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.overlay-yellow {
+
+  position: fixed;
+  inset: 0;
+
+  background: rgba(48, 41, 4, 0.65);
+
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.popup-card-feedback {
+
+  width: 650px;
+
+  background: white;
+  color: #111;
+
+  border-radius: 24px;
+
+  padding: 3rem;
+
+  text-align: center;
+
+  border: 3px solid #183153;
+
+  h2{
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+    margin: 1rem;
+    line-height: 1.5;
+  }
+}
+
+.gul-feedback {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background-color: #fff2c1;
+}
+
+.warning-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  margin-top: 1rem;
+}
+
+// ================= PHISHING INFO ================= //
+
+.phishing-layout {
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end;
+}
+
+.popup-card-info1b {
+
+  width: 1400px;
+  max-width: 80vw;
+  background: #f7f7f7;
+  color: #111;
+  border-radius: 32px;
+  padding: 2rem 3rem;
+  border: 3px solid #183153;
+
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.ph-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.ph-pics {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.phishing-info-1,
+.phishing-info-2 {
+  width: 100%;
+  border-radius: 16px;
+  border: 2px solid #d7d7d7;
+}
+
+.ph-explain {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.ph-explain h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.ph-explain p {
+  background: #dceeff;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.ph-explain-1 strong,
+.ph-explain-2 strong,
+.ph-explain-3 strong {
+  color: #1180e8;
+}
+
+.ph-explain-4 {
+  background: #ece6ff !important;
+}
+
+.ph-explain-4 strong {
+  color: #6b41ff;
+}
+
+.popup-card-info1b .next-btn {
+  margin-top: 2rem;
+  align-self: flex-end;
+  margin-right: 7vw;
+}
+
+.phishing-layout .next-btn {
+  margin-top: 2rem;
+}
+
+//=============== INTRO 2 ==============//
