@@ -555,6 +555,10 @@ main {
   width: 60vw;
 }
 
+.scene3-laptop {
+  width: 60vw;
+}
+
 .overlay {
   position: fixed;
   inset: 0;
@@ -657,6 +661,19 @@ main {
   justify-content: center;
   margin-bottom: 2rem;
   background-color: #fabcbc;
+}
+
+.orange-feedback {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background-color: #fadabc;
+}
+
+.transparent-feedback {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
 
 .warning-icon {

@@ -1026,28 +1026,39 @@ const showScene3 = () => {
           <h2>Hvad gør du?</h2>
 
           <p class="scene1-subtitle">
-            Du skal bruge internet for at kunne arbejde med gruppen
+            Du skal bruge internet for at kunne arbejde med gruppen på caféen
           </p>
 
           <!-- CHOICE 1 -->
-          <button class="choice-btn choice-1-btn" data-action="choice-google">
+          <button class="choice-btn choice-1-btn" data-action="choice-wifi">
 
-            <img src="img/søg-ikon.png" alt="" class="choice-icon">
+            <img src="img/wifi-icon.png" alt="" class="choice-icon">
 
             <div>
-              <h4>Søger efter gratis-versioner</h4>
-              <p>Googler “PDF Pro Editor FREE download”</p>
+              <h4>Gratis café wifi</h4>
+              <p>Forbind til “Free_Cafe_Wifi”</p>
             </div>
           </button>
 
           <!-- CHOICE 2 -->
-          <button class="choice-btn choice-2-btn" data-action="choice-official">
+          <button class="choice-btn choice-2-btn" data-action="choice-vpn">
 
-            <img src="img/download-icon.png" alt="" class="choice-icon">
+            <img src="img/vpn-icon.png" alt="" class="choice-icon">
 
             <div>
-              <h4>Den officielle hjemmeside</h4>
-              <p>Finder programmets officielle side <br>og køber og downloader derfra</p>
+              <h4>Brug en VPN</h4>
+              <p>Du connecter til din VPN og derefter til “Free_Cafe_Wifi”</p>
+            </div>
+          </button>
+
+          <!-- CHOICE 3 -->
+          <button class="choice-btn choice-3-btn" data-action="choice-mobil">
+
+            <img src="img/mobilnet-icon.png" alt="" class="choice-icon">
+
+            <div>
+              <h4>Mobilnet</h4>
+              <p>Deler internet fra din mobil</p>
             </div>
           </button>
 
@@ -1060,9 +1071,147 @@ const showScene3 = () => {
         </div>
 
         <!-- LAPTOP -->
-        <img src="img/laptop-scene2.png" alt="" class="scene1-laptop">
+        <img src="img/laptop-scene3-v2.png" alt="" class="scene3-laptop">
       </div>
     </section>
+  `);
+};
+
+//=============== FEEDBACK WIFI ===============//
+const showScene3Feedback1 = () => {
+
+  const popup = document.createElement("div");
+
+  popup.classList.add("overlay-red");
+
+  popup.innerHTML = `
+  
+    <div class="popup-card-feedback">
+
+      <h2>Vær forsigtig med offentligt wifi</h2>
+
+      <p> Offentlige netværk kan være usikre, fordi andre på samme netværk <br>
+      kan overvåge trafikken eller forsøge at opsnappe data. </p>
+
+      <div class= orange-feedback>
+        <img src="img/0-points.png" alt="" class="zero-points">
+        <p> <strong> Få point denne gang </strong> <br>
+        Brug helst VPN eller mobilnet, når du håndterer følsomme oplysninger på offentlige netværk.</p>
+      </div>
+
+      <button class="next-btn btn">
+        Se hvad du missede →
+      </button>
+
+    </div>
+  `;
+
+  document.body.appendChild(popup);
+
+  popup.querySelector("button")
+    .addEventListener("click", () => {
+
+      popup.remove();
+
+      showMalwareInfo();
+    });
+};
+
+//=============== FEEDBACK VPN ===============//
+const showScene3Feedback2 = () => {
+  const popup = document.createElement("div");
+  popup.classList.add("overlay-green");
+
+  popup.innerHTML = `
+    <div class="popup-card-feedback">
+      <h2>Godt valg!</h2>
+
+      <p> VPN krypterer din forbindelse, så andre på det offentlige netværk har sværere ved at opsnappe dine data.</p>
+
+      <div class= grøn-feedback>
+        <img src="img/0-points.png" alt="" class="zero-points">
+        <p> <strong> Fuldt point denne gang! </strong> </p>
+      </div>
+
+      <button class="next-btn btn">
+        Se din score! →
+      </button>
+    </div>
+  `;
+
+  document.body.appendChild(popup);
+
+  popup.querySelector("button")
+    .addEventListener("click", () => {
+
+      popup.remove();
+
+      showFinalScore();
+    });
+};
+
+//=============== FEEDBACK MOBILNET ===============//
+const showScene3Feedback3 = () => {
+  const popup = document.createElement("div");
+  popup.classList.add("overlay-green");
+
+  popup.innerHTML = `
+    <div class="popup-card-feedback">
+      <h2>Godt valg!</h2>
+
+      <p> Ved at bruge mobilnet undgår du det offentlige wifi og reducerer risikoen for overvågning eller usikre forbindelser</p>
+
+      <div class= grøn-feedback>
+        <img src="img/0-points.png" alt="" class="zero-points">
+        <p> <strong> Fuldt point denne gang! </strong> </p>
+      </div>
+
+      <button class="next-btn btn">
+        Se din score! →
+      </button>
+    </div>
+  `;
+
+  document.body.appendChild(popup);
+
+  popup.querySelector("button")
+    .addEventListener("click", () => {
+
+      popup.remove();
+
+      showFinalScore();
+    });
+};
+
+// ================= FINAL SCORE ================= //
+
+const showFinalScore = () => {
+
+  updateUI(`
+    ${renderTopbar()}
+
+    <section class="intro">
+
+      <img src="img/progress-bar-goal.png" alt="Progression" class="progress-img">
+
+      <div class="intro-wrapper">
+        <div class="intro-card">
+
+          <h2>Tillykke! Du kom i mål!</h2>
+
+          <p>Du fik i alt</p>
+
+          <div class= transparent-feedback>
+          <p> <strong> ${renderScore()}</strong> </p>
+          </div>
+
+          <button class="next-btn btn" data-action="back">
+            Prøv igen
+          </button>
+        </div>
+      </div>
+    </section>
+
   `);
 };
 
@@ -1173,6 +1322,21 @@ const nextStage = (e) => {
     //-------Scene 3-------//
     case "find-internet":
       showScene3();
+    break;
+
+    case "choice-wifi":
+      showScene3Feedback1();
+      score += 20;
+    break;
+
+    case "choice-vpn":
+      showScene3Feedback2();
+      score += 100;
+    break;
+
+    case "choice-mobil":
+      showScene3Feedback3();
+      score += 100;
     break;
   }
 };
